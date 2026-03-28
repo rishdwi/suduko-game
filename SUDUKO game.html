@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Web Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Sudoku</h1>
+            <div class="difficulty-selector">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <div class="stats">
+                <span id="timer">00:00</span>
+                <span id="mistakes">Mistakes: 0/3</span>
+            </div>
+        </header>
+
+        <div class="game-area">
+            <div id="sudoku-board" class="sudoku-board"></div>
+
+            <div class="controls">
+                <div class="numpad">
+                    <button class="numpad-btn" data-val="1">1</button>
+                    <button class="numpad-btn" data-val="2">2</button>
+                    <button class="numpad-btn" data-val="3">3</button>
+                    <button class="numpad-btn" data-val="4">4</button>
+                    <button class="numpad-btn" data-val="5">5</button>
+                    <button class="numpad-btn" data-val="6">6</button>
+                    <button class="numpad-btn" data-val="7">7</button>
+                    <button class="numpad-btn" data-val="8">8</button>
+                    <button class="numpad-btn" data-val="9">9</button>
+                </div>
+
+                <div class="actions">
+                    <button id="btn-erase" class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M20 20H7L3 16C2.5 15.5 2.5 14.5 3 14L13 4C13.5 3.5 14.5 3.5 15 4L20 9C20.5 9.5 20.5 10.5 20 11L11 20H20V20Z" />
+                        </svg>
+                        <span>Erase</span>
+                    </button>
+                    <button id="btn-hint" class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 16V12" />
+                            <path d="M12 8H12.01" />
+                        </svg>
+                        <span>Hint</span>
+                    </button>
+                    <button id="btn-new-game" class="action-btn primary">New Game</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-over-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2 id="end-message">Game Over</h2>
+                <p id="end-stats"></p>
+                <button id="btn-restart" class="primary-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
